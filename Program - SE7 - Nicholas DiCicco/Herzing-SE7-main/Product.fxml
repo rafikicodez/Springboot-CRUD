@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane_Product" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="1002.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControlProductMGR">
+   <children>
+      <Label fx:id="Main_Label" alignment="CENTER" layoutY="25.0" prefHeight="50.0" prefWidth="1002.0" stylesheets="@application.css" text="Product Manager" AnchorPane.bottomAnchor="516.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <MenuBar layoutX="265.0" layoutY="14.0" prefHeight="25.0" prefWidth="1002.0" AnchorPane.bottomAnchor="577.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu text="File">
+               <items>
+                  <MenuItem fx:id="new_file" onAction="#handleButtonAction" text="_New..." />
+                  <MenuItem fx:id="open" onAction="#handleButtonAction" text="_Open..." />
+                  <MenuItem fx:id="save" onAction="#handleButtonAction" text="_Save..." />
+                  <MenuItem fx:id="settings" onAction="#handleButtonAction" text="Se_ttings..." />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="exit" onAction="#handleButtonAction" text="_Exit..." />
+               </items>
+            </Menu>
+          <Menu text="_Staff">
+            <items>
+              <MenuItem onAction="#handleButtonAction" text="_Profile..." />
+                  <MenuItem onAction="#handleButtonAction" text="_Schedule..." />
+            </items>
+          </Menu>
+            <Menu text="_Users">
+              <items>
+                  <MenuItem text="_Profile..." />
+                  <MenuItem text="_Reservations..." />
+              </items>
+            </Menu>
+            <Menu text="_Inventory">
+              <items>
+                <MenuItem fx:id="ProductManager" onAction="#handleButtonAction" text="Product _Manager..." />
+              </items>
+            </Menu>
+            <Menu text="_Services">
+              <items>
+                <MenuItem onAction="#handleButtonAction" text="_Food Manager..." />
+                  <MenuItem onAction="#handleButtonAction" text="F_ront Service..." />
+                  <MenuItem onAction="#handleButtonAction" text="_Table Manager..." />
+              </items>
+            </Menu>
+          <Menu text="_Help">
+            <items>
+              <MenuItem fx:id="about" onAction="#handleButtonAction" text="_About..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="Footer_Label" alignment="CENTER" layoutX="299.0" layoutY="464.0" prefHeight="25.0" prefWidth="773.0" stylesheets="@application.css" text="Developed by Herzing Computer Engineering Team" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <SplitPane dividerPositions="0.327" layoutY="85.0" prefHeight="491.0" prefWidth="1002.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="homeBtn" layoutX="14.0" layoutY="440.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="100.0" text="Home" />
+                  <Button fx:id="delBtn" disable="true" layoutX="218.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="75.0" text="Delete" />
+                  <Label fx:id="Header_Label" alignment="CENTER" layoutX="1.0" prefHeight="40.0" prefWidth="324.0" text="Add Product">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Label>
+                  <Label fx:id="ID_Label" layoutX="25.0" layoutY="73.0" prefHeight="30.0" prefWidth="268.0" text="Product ID:" />
+                  <TextField fx:id="nameTextField" layoutX="25.0" layoutY="140.0" prefHeight="35.0" prefWidth="268.0" />
+                  <Label layoutX="25.0" layoutY="110.0" prefHeight="30.0" prefWidth="268.0" text="Name" />
+                  <Label layoutX="25.0" layoutY="176.0" prefHeight="30.0" prefWidth="268.0" text="Sku" />
+                  <TextField fx:id="skuTextField" layoutX="25.0" layoutY="206.0" prefHeight="35.0" prefWidth="268.0" />
+                  <Label layoutX="25.0" layoutY="241.0" prefHeight="30.0" prefWidth="268.0" text="Quantity" />
+                  <TextField fx:id="quantityTextField" layoutX="25.0" layoutY="271.0" prefHeight="35.0" prefWidth="268.0" />
+                  <Label layoutX="25.0" layoutY="306.0" prefHeight="30.0" prefWidth="268.0" text="Price" />
+                  <TextField fx:id="priceTextField" layoutX="25.0" layoutY="336.0" prefHeight="35.0" prefWidth="268.0" />
+                  <Label fx:id="Count_Label" layoutX="25.0" layoutY="43.0" prefHeight="25.0" prefWidth="163.0" text="Product Count: " />
+                  <Button fx:id="refreshBtn" layoutX="218.0" layoutY="443.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="75.0" text="Refresh" />
+                  <Button fx:id="editBtn" disable="true" layoutX="121.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="75.0" text="Edit" />
+                  <Button fx:id="saveBtn" layoutX="25.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="75.0" text="Save" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="Product_Table" layoutX="97.0" layoutY="45.0" prefHeight="489.0" prefWidth="670.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="Name_Column" minWidth="100.0" prefWidth="292.0" text="Name" />
+                      <TableColumn fx:id="Sku_Column" minWidth="75.0" prefWidth="125.0" text="Sku" />
+                        <TableColumn fx:id="Quantity_Column" minWidth="75.0" prefWidth="125.0" text="Quantity" />
+                        <TableColumn fx:id="Price_Column" minWidth="75.0" prefWidth="125.0" text="Price" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Label layoutX="386.0" layoutY="414.0" prefHeight="17.0" prefWidth="387.0" stylesheets="@application.css" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>
